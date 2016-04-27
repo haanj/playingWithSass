@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hello Vue</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body id="app">
+  <main>
+    <h1>{{ message }}</h1>
+  
+    <ul v-for="person in people">
+      <li>Hello, {{ person.name }}</li>
+    </ul>
+
+    <input v-model="newName">
+    <button v-on:click="addName()">Add Name</button>
+  </main> 
+
+  <custom-footer></custom-footer>
+
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/vue/1.0.21/vue.js"></script>
+
+
+
+  <script>
+    Vue.component('custom-footer', Vue.extend({
+      template: '<footer>This is a custom footer!</footer>'
+    }));
+
+    var vm = new Vue({
+      el: '#app',
+
+      data: {
+        message: 'Hello World',
+        newName: '',
+        people: [
+          {name: "Rusty"},
+          {name: "Hank"},
+          {name: "Dean"},
+          {name: "Brock"}
+        ]
+      },
+
+        methods: {
+        addName: function() {
+          this.people.push({name: this.newName});
+          this.newName = '';
+        } 
+      }
+    });
+  </script>
+</body>

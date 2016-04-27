@@ -1,0 +1,14 @@
+body {
+  background-color: #1a001a;
+  color: #e600e6; }
+  body main {
+    background-color: purple;
+    color: #00cd00;
+    border: solid green; }
+  body button {
+    border: solid #00cd00;
+    color: #e600e6; }
+  body footer {
+    font-size: 30px; }
+
+/*# sourceMappingURL=styles.css.map */
